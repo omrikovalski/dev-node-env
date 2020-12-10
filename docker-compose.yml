@@ -1,0 +1,29 @@
+version: "3"
+services:
+  client:
+    build: 
+      context: client
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    links:
+      - middleware
+    depends_on:
+      - middleware
+    tty: true
+
+  middleware:
+    build:
+      context: middleware
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    tty: true
+
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    
