@@ -11,4 +11,4 @@ RUN npm ci --only=production
 COPY . .
 
 EXPOSE 8081
-CMD [ "npm", "run start" ]
+CMD [ "node", "middleware.js" ]
