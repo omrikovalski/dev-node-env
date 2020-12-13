@@ -11,4 +11,4 @@ RUN npm ci --only=production
 COPY . .
 
 EXPOSE 8081
-CMD [ "node", "externalApi.js" ]
+CMD [ "npm", "run start" ]

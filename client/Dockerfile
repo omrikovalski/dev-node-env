@@ -16,4 +16,4 @@ RUN ./node_modules/@angular/cli/bin/ng build --prod
 RUN ./node_modules/@angular/cli/bin/ng run client:server:production
 
 EXPOSE 4000
-CMD [ "node", "./dist/client/server/main.js" ]
+CMD [ "npm", "run serve:ssr" ]
