@@ -1,0 +1,4 @@
+#!/bin/bash
+dc/stop
+docker-compose -p fnx-cloud  -f ./dc/docker-compose.yml up -d --build --remove-orphans "$@"
+dc/restart

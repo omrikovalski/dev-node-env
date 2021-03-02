@@ -1,0 +1,4 @@
+#!/bin/bash
+[ -z "$1" ] && echo "Please specify service to connect" && exit
+[ -z "$2" ] && echo "Please specify command" && exit
+docker-compose -p fnx-cloud -f ./dc/docker-compose.yml exec $1 "$2"

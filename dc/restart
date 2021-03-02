@@ -1,0 +1,3 @@
+#!/bin/bash
+dc/stop "$@"
+dc/start "$@"
