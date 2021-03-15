@@ -1,5 +1,5 @@
 #!/bin/bash
-docker-compose -p fnx-cloud -f ./dc/docker-compose.yml up -d --remove-orphans "$@"
+docker-compose -p fnx-cloud -f ./dc/docker-compose.yml -f ./dc/docker-compose.dev.yml up -d --remove-orphans "$@"
 echo '
   ___ _  ___  __   ___ _             _ 
  | __| \| \ \/ /  / __| |___ _  _ __| |

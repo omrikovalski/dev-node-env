@@ -1,0 +1,28 @@
+version: "3"
+services:
+  nginx:
+    build: 
+      context: ../client
+      dockerfile: Dockerfile.nginx
+    ports:
+      - 80:80
+    links:
+      - client
+    depends_on:
+      - client
+    volumes:
+      - ../client/nginx.conf.dev:/etc/nginx/nginx.conf:cached 
+    tty: true
+
+  client:
+    build: 
+      context: ../client
+      dockerfile: Dockerfile.dev
+    volumes:
+      -  clientdata:/app
+      - ../client/src:/app/src:cached 
+    tty: true
+
+  # middleware:
+  #   volumes:
+  #     - ../middleware/config.js:/app/config.js:cached

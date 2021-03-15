@@ -1,7 +1,7 @@
 version: "3"
 services:
   client:
-    build: 
+    build: # node:current-alpine3.12 # artifatory url
       context: ../client
       dockerfile: Dockerfile
     ports:
@@ -19,8 +19,10 @@ services:
     build:
       context: ../middleware
       dockerfile: Dockerfile
+      #debugger https://code.visualstudio.com/docs/containers/debug-node
     ports:
       - "8081:8081"
+      - "9229:9229"
     volumes:
       -  middlewaredata:/app
       - ../middleware/src:/app/src:cached
